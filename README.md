@@ -205,8 +205,9 @@ ReactDOM.render(
 1. create database (sequelize db:create)
 1. create sequelize models
    - sequelize model:generate --name tableName --attributes columnName:dataType,columnName:dataType,columnName:dataType
+1. Check models, add unique constraints to migration (other validations should be added to models)
 1. sequelize db:migrate
-1. make associations
+1. make associations to models
 1. make server.js
 1. make controllers, routers folders
 
