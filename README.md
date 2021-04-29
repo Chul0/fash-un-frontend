@@ -37,7 +37,9 @@ Solo Project 3 (Frontend)
 ## HTTP Routes
 <details>
 <summary>Click to see</summary>
+
 [Users]
+
 | Method | Path                   | Purpose                     |
 |--------|------------------------|-----------------------------|
 | GET    | /users/:id             | Get user profile info       |
