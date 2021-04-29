@@ -33,6 +33,12 @@ Solo Project 3 (Frontend)
 
 ## Frontend components tree
 ## ERD
+<details>
+<summary>Click to see ERD</summary>
+
+![1](./ERD/ERD.png)
+
+</details>
 
 ## HTTP Routes
 <details>
@@ -40,38 +46,43 @@ Solo Project 3 (Frontend)
 
 [Users]
 
-| Method | Path                   | Purpose                     |
-|--------|------------------------|-----------------------------|
-| GET    | /users/:id             | Get user profile info       |
-| GET    | /users/:id/moodboard   | Get saved mood board        |
+| Method | Path                   | Purpose                     | Note                       |
+|--------|------------------------|-----------------------------|----------------------------|
+| GET    | /users                 | Get user profile info       | use auth headers for userId|
+| GET    | /users/moodboard       | Get saved mood board        | use auth headers for userId|
 | POST   | /users                 | Sign-up                     |
 | POST   | /users/login           | Log-in                      |
-| PUT    | /users/:id/profile     | Edit user profile info      |
-| DELETE | /users/:id             | Delete user account         |
-| DELETE | /users/:id/delete      | Delete saved image from user|
+| PUT    | /users/profile         | Edit user profile info      | use auth headers for userId|
+| DELETE | /users/                | Delete user account         | use auth headers for userId|
 
-[Brand]
-| Method | Path                   | Purpose                         |
+
+[Brand] * /:id/ refers to the id of whatever that comes before /:id/ *
+| Method | Path                   | Purpose                         | 
 |--------|------------------------|---------------------------------|
-| GET    | /brands                | Get brand list from api         |
-| GET    | /brands/:id            | Brand collection images         |
-| POST   | /brands/:id/save       | User can save images            |
-| DELETE | /brands/:id/delete     | User can delete saved images    |
+| GET    | /brands                | Get brand list from api         | 
+| GET    | /brands/:id            | Brand contents and comments     |  
+| POST   | /brandContent/:id      | User can save images            |
+| DELETE | /brandContent/:id      | User can delete saved images    |
+
 
 [Comment]
 | Method | Path                   | Purpose                         |
 |--------|------------------------|---------------------------------|
-| GET    | /comments              | Get comment list                |
-| POST   | /comments              | Leave comments                  |
-| PUT    | /comments              | Edit comments                   |
-| DELETE | /comments              | Delete comments                 |
+| POST   | /brand/:id/comments    | Leave comments                  |
+
 
 </details>
 
 ## MVP checklist 
 - Can I sign up, sign in and sign out?
-- Can I see all brand list?
-- Can I save and delete brand images?
+- Can I see all brand list and its contents?
+- Can I see my board? (save brand contents, list it in my board)
+
+### Stretch goals
+- Can I find a brand through search bar?
+- Can I leave comments and see them?
+- Can I edit and delete my comments?
+- Can I see my profile and edit/delete it?
 </details>
 
 ## Work flow
