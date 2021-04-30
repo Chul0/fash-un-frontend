@@ -1,8 +1,8 @@
+import BrandsList from "../components/BrandsList"
+
 const Brands = () => {
     return(
-        <div>
-            Brands
-        </div>
+        <BrandsList />
     )
 }
 

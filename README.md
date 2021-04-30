@@ -306,7 +306,8 @@ reportWebVitals();
 ```
 
 1. Any child component should follow these steps to access the store
-   ![alt text](./useContextTips/childcomponent.png)
+
+   ![alt text](./ERD:TREE/childcomponent.png)
 
 </p>
 </details>

@@ -33,3 +33,34 @@ link{
 #submit-button, #login-button{
   cursor: pointer;
 } 
+
+.brandList-container{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin: 100px auto;
+}
+
+.singleBrand-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width:300px;
+  height:500px;
+  margin: auto 10px auto 10px;
+}
+
+#brandImage{
+  width: 300px;
+  height: 500px;
+  margin: auto;
+}
+
+#brandName{
+  position: absolute;
+  margin: auto;
+  color: white;
+  width: 300px;
+  background-color: black;
+}
