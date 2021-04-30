@@ -185,7 +185,7 @@ ReactDOM.render(
 1. morgan
 1. pg (is needed to create db(sequelize db:create))
 1. rowdy-logger (a tool that gives a quick summary of all routes)
-1. axios
+1. axios (if you use a third party api)
 1. sequelize 
 1. sequelize-cli
 
@@ -194,7 +194,7 @@ ReactDOM.render(
 1. npm i -y
 1. npm init 
 1. npm install dependencies(written above)
-1. .gitignore (add node_modules, config/config.json, .env(if you use react-dotenv))
+1. .gitignore (add node_modules, config/config.json)
 1. sequelize init (To create config, migrations, models, and seeders) 
 1. adjust config
 1. adjust script in package.json(npm run dev will not run if you don't add this)
@@ -239,8 +239,15 @@ app.listen(PORT, () => {
 })
 ```
 
-1. test with postman that server is running(nodemon server.js or npm run dev)
-1. create routes and controllers
+1. test if that server runs successfully(nodemon server.js or npm run dev)
+1. How to add/create seed files 
+
+```
+sequelize-cli seed:generate --name <table name you want to seed to>
+sequelize-cli db:seed:all
+sequelize-cli db:seed:undo:all
+
+```
 
 </p>
 
