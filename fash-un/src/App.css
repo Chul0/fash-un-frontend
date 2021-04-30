@@ -34,7 +34,7 @@ link{
   cursor: pointer;
 } 
 
-.brandList-container{
+.brandList-container, .brandContent-container{
   width: 100%;
   display: flex;
   align-items: center;
@@ -51,13 +51,13 @@ link{
   margin: auto 10px auto 10px;
 }
 
-#brandImage{
+.brandImage, .contentImage{
   width: 300px;
   height: 500px;
   margin: auto;
 }
 
-#brandName{
+.brandName{
   position: absolute;
   margin: auto;
   color: white;

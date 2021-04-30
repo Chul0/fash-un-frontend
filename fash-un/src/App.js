@@ -6,7 +6,7 @@ import { UserContext } from './contexts/UserContext'
 
 import NavBar from './components/NavBar'
 import Home from './pages/Home'
-import BrandContents from './pages/BrandContents'
+import SingleBrand from './pages/SingleBrand'
 import Brands from './pages/Brands'
 import Login from './pages/Login'
 import MyBoard from './pages/MyBoard'
@@ -53,7 +53,8 @@ function App(props) {
       />
 
       <Route 
-       path="/brand"
+       path="/brands"
+       exact
        render={()=>{
          return <Brands />
        }}
@@ -71,6 +72,14 @@ function App(props) {
        render={()=>{
          return <Profile />
        }}
+      />
+
+      <Route 
+        path="/brands/:id"
+        render={()=>{
+          // console.log('hello form single brand');
+          return <SingleBrand />
+        }}
       />
 
 

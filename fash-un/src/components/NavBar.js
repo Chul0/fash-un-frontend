@@ -11,7 +11,7 @@ const NavBar = () => {
 
         {user.id ?
         <>
-            <Link to="/brand">See All Brands</Link>{' | '}
+            <Link to="/brands">See All Brands</Link>{' | '}
             <Link to="/myboard">My Board</Link>{' | '}
             <Link to="/profile">Profile</Link>{' | '}
             <span 

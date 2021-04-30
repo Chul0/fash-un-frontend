@@ -25,8 +25,8 @@ const BrandsList = (props) => {
                             className="allBrands">
                             <Link to={`/brands/${brand.id}`}>
                                 <div className="singleBrand-container">
-                                    <h3 id="brandName">{brand.name}</h3>
-                                    <img id="brandImage" src={brand.image} />
+                                    <h3 className="brandName">{brand.name}</h3>
+                                    <img className="brandImage" src={brand.image} />
                                 </div>
                             </Link>
                         </div>
