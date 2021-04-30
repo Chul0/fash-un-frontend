@@ -21,16 +21,24 @@ const SingleBrand = (props) => {
         <div className="brandContent-container">
             {
                 brandContent.brandContent ?
+                <h1 id="brandName">{brandContent.brand.name}</h1>
+                :
+                null
+            }
+            <div className="contentImage"> 
+            {
+                brandContent.brandContent ?
                 brandContent.brandContent.map((content) => {
-                    return <div key={content.id}
-                    className="allContents">
-                        <h1>{brandContent.brand.name}</h1>
+                    return <div key={content.id}>
+                        {/* <h1>{brandContent.brand.name}</h1> */}
                         <img className="contentImage" src={content.image} />
                         </div>
                 })
                 :
                 <p>Loading...</p>
             }
+            </div>
+            
 
         </div>
     )
