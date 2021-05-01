@@ -12,12 +12,13 @@ import Login from './pages/Login'
 import MyBoard from './pages/MyBoard'
 import Profile from './pages/Profile'
 import Signup from './pages/Signup'
+import SingleImage from './components/SingleImage'
 
 
 function App(props) {
   const [user, setUser] = useContext(UserContext)
   // console.log(process.env.REACT_APP_BACKEND_URL); server testing
- 
+
   return (
     <div className="App">
       <NavBar />
@@ -82,6 +83,12 @@ function App(props) {
         }}
       />
 
+      <Route 
+        path="/brands/:id/content/:id"
+        render={()=>{
+          return <SingleImage />
+        }} 
+      />
 
 
 

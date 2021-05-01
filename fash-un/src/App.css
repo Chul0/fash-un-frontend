@@ -51,7 +51,7 @@ link{
   margin: auto 10px auto 10px;
 }
 
-.brandImage, .contentImage{
+.brandImage {
   width: 300px;
   height: 500px;
   margin: auto;
@@ -72,7 +72,7 @@ link{
   margin: 0;
 }
 
-.contentImage{
+.contentImage-container{
   display: flex;
   margin: 0 10px 0 10px;
 }
@@ -81,3 +81,25 @@ link{
   text-align: left;
   margin: 50px;
 }
+
+.dialog {
+  box-shadow: 0 8px 6px -6px black;
+  position: static;
+  left: 20%;
+  top: 10%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dialog img{
+  width: 500px;
+  height:700px;
+}
+
+.save-to-board-button{
+  margin: auto;
+}
+
+
