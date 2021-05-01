@@ -1,13 +1,15 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
 import {useParams} from 'react-router-dom'
 import { Route, Redirect } from 'react-router-dom'
 import axios from 'axios'
+import { UserContext } from '../contexts/UserContext'
 
 const SingleImage = (props) => {
     const { id } = useParams()
+    const [user, setUser] = useContext(UserContext)
     const [singleImage, setSingleImage] = useState({})
-
     const [imagePopup, setImagePopup] = useState(false)  
+
 
     const fetchSingleImage = () => {
         axios.get(`${process.env.REACT_APP_BACKEND_URL}/brandContent/${id}`)
@@ -28,6 +30,21 @@ const SingleImage = (props) => {
     useEffect(handleShowDialog, [singleImage])
 
 
+    const saveImages =(e) =>{
+         e.preventDefault()
+        axios.post(`${process.env.REACT_APP_BACKEND_URL}/brandcontent/${id}`,
+        {},
+        //Learned the hard way that even if I haven't set body in my backend, I should add body here, even as an empty body{}, is it because I am not using async?
+        {
+            headers:{
+                Authorization: user.id
+            }
+        })
+        .then((response)=>{
+            console.log('you clicked save');
+            console.log(response);
+        })
+    }
 
 
     return(
@@ -49,6 +66,7 @@ const SingleImage = (props) => {
                         />
                         <button
                             className="save-to-board-button"
+                            onClick={saveImages}
                         >save to my board</button>
                         </dialog>
                 )}
