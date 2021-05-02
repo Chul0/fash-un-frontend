@@ -1,6 +1,6 @@
 import { useContext } from 'react'
 import { UserContext } from '../contexts/UserContext'
-import { Link } from 'react-router-dom'
+import { Link, Router } from 'react-router-dom'
 
 const NavBar = () => {
     const [user, setUser] = useContext(UserContext)
@@ -14,13 +14,12 @@ const NavBar = () => {
             <Link to="/brands">See All Brands</Link>{' | '}
             <Link to="/myboard">My Board</Link>{' | '}
             <Link to="/profile">Profile</Link>{' | '}
-            <span 
-                id="login-button"
+            <Link to="/" 
                 onClick={() => {
                     localStorage.removeItem('userId')
-                    window.location.reload()
+                    setUser('')
                 }}
-            >Sign Out</span>
+            >Sign Out</Link>
         </>
 
         :

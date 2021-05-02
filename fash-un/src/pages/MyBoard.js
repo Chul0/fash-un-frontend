@@ -55,7 +55,7 @@ const MyBoard = () => {
                 })
                 :
                 <p>
-                    Looding...
+                    Loading...
                 </p>
             }
         </div>
