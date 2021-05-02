@@ -6,6 +6,7 @@ const NavBar = () => {
     const [user, setUser] = useContext(UserContext)
 
     return(
+            
         <nav>
             <Link to="/">Home</Link>{' | '}
 
@@ -20,6 +21,11 @@ const NavBar = () => {
                     setUser('') //set user state as an empty string, so it will redirect me to home as set in App.js
                 }}
             >Sign Out</Link>
+            <header
+                style={{textAlign:"right"}}>
+                Hello, You're signed in as {user.name}
+            </header>
+            
         </>
 
         :
@@ -31,6 +37,7 @@ const NavBar = () => {
         }
 
         </nav>
+        
     )
 }
 
