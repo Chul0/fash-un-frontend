@@ -38,7 +38,7 @@ const SingleBrand = (props) => {
                 brandContent.brandContent.map((content) => {
                     return <div key={content.id}>
                             <Link to={`/brands/${id}/content/${content.id}`}>
-                                <img className={`contentImage-${content.id}`} //
+                                <img className="contentImage"
                                 src={content.image} 
                                 key={content.id}
                                 style={{ width: "300px", height: "500px", margin:" 0 10px 0 10px"}} />
