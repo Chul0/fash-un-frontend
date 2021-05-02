@@ -17,7 +17,7 @@ const NavBar = () => {
             <Link to="/" 
                 onClick={() => {
                     localStorage.removeItem('userId')
-                    setUser('')
+                    setUser('') //set user state as an empty string, so it will redirect me to home as set in App.js
                 }}
             >Sign Out</Link>
         </>

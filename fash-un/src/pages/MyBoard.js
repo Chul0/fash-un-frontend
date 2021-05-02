@@ -55,7 +55,7 @@ const MyBoard = () => {
                 })
                 :
                 <p>
-                    Loading...
+                    You haven't added any looks yet!
                 </p>
             }
         </div>
