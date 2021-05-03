@@ -102,7 +102,7 @@ link{
   margin: auto;
 }
 
-.comment-container{
+.commentForm-container{
   display: flex;
   flex-direction: column;
   width: 1000px;
@@ -113,3 +113,11 @@ link{
   height: 2em;
 }
 
+.comment-container{
+  text-align: left;
+  margin-left: 20px;
+}
+
+.comment-container p{
+  border-bottom: 1px solid black;
+}

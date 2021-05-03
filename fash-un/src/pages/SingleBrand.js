@@ -57,11 +57,11 @@ const SingleBrand = (props) => {
                 <p>Loading...</p>
             }
             </div>
-            <div className="comment-container">
+            <div className="commentForm-container">
                 <>
                 <CommentForm setShouldReload={setShouldReload} />
                 </>
-                <div className="each-comment">
+                <div className="comment-container">
                     {brandContent.comments &&
                         brandContent.comments.map((comment) => {
                             return <div key={comment.id}>
@@ -70,9 +70,6 @@ const SingleBrand = (props) => {
                         })
                     }
                 </div>
-               {/*
-               {brandContent.comments.user.name}  
-               {brandContent.comments.description} */}
             </div>
 
         </div>

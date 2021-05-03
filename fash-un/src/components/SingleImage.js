@@ -21,15 +21,15 @@ const SingleImage = (props) => {
     }
 
     useEffect(fetchSingleImage, [id])
+    
 
 
 
-    const handleShowDialog = () => {
+    const handleShowDialog = () => {   
         setImagePopup(!imagePopup)
         console.log('you clicked an image');
     }
     useEffect(handleShowDialog, [singleImage])
-
 
     const saveImages =(e) =>{
          e.preventDefault()

@@ -10,6 +10,7 @@ const Signup = (props) => {
         route="/users"   
         log="Sign Up Successful"
         message="You are sucessfully signed up!"
+        crud="post"
         />
     )
 }
