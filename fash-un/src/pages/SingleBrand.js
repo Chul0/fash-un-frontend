@@ -9,18 +9,21 @@ import CommentForm from '../components/CommentForm'
 const SingleBrand = (props) => {
     const { id } = useParams()
     const [brandContent, setBrandContent] = useState({})
-
+    const [shouldReload, setShouldReload ] = useState(true)
     
     const fetchBrandContent = () => {
+        if (!shouldReload) { return }
+
         axios.get(`${process.env.REACT_APP_BACKEND_URL}/brands/${id}`)
         .then((response) => {
             // console.log(response.data);
             setBrandContent(response.data)
-
+            setShouldReload(false)
         })
     }
 
     useEffect(fetchBrandContent, [])
+    useEffect(fetchBrandContent, [shouldReload])
 
 
         
@@ -55,7 +58,21 @@ const SingleBrand = (props) => {
             }
             </div>
             <div className="comment-container">
-                <CommentForm />
+                <>
+                <CommentForm setShouldReload={setShouldReload} />
+                </>
+                <div className="each-comment">
+                    {brandContent.comments &&
+                        brandContent.comments.map((comment) => {
+                            return <div key={comment.id}>
+                                        <p>{comment.user.name}{' | '}{comment.description}</p>
+                                   </div>
+                        })
+                    }
+                </div>
+               {/*
+               {brandContent.comments.user.name}  
+               {brandContent.comments.description} */}
             </div>
 
         </div>

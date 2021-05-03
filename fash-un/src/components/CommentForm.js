@@ -19,13 +19,14 @@ const CommentForm= (props) => {
         })
         .then((response) => {
             setDescription('')
+            props.setShouldReload(true)
         })
     }
 
     return(
         <form onSubmit={handleSubmit}>
             <label htmlFor="new-description"></label>
-            <input placeholder="Your comment here" value={description} onChange={(e) => { setDescription(e.target.value)}} ></input>
+            <input id="comment-input" placeholder="Your comment here" value={description} onChange={(e) => { setDescription(e.target.value)}} ></input>
 
             <input type="submit" value="submit" />
         </form>

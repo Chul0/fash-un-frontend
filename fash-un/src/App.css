@@ -102,4 +102,14 @@ link{
   margin: auto;
 }
 
+.comment-container{
+  display: flex;
+  flex-direction: column;
+  width: 1000px;
+}
+
+#comment-input{
+  width: 900px;
+  height: 2em;
+}
 
