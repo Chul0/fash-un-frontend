@@ -29,6 +29,23 @@ const Profile = () => {
             console.log({error});
         }
     }
+
+    const handleDelete = async (e) => {
+        try {
+            e.preventDefault()
+            let response = await axios.delete(`${process.env.REACT_APP_BACKEND_URL}/users/`,{
+                headers:{
+                    Authorization: user.id
+                }
+            })
+            // console.log(response);
+            alert(`Bye ${response.data.user.name}`)
+            setUser('')
+        } catch (error) {
+            console.log({error});
+        }
+    }
+
     return(
         <>
         { shouldRedirect && <Redirect to={'/'} /> }
@@ -44,7 +61,8 @@ const Profile = () => {
         <input name="password" type="password" value={user.password} onChange={handleChange} />
 
         <input id="submit-button" type="submit" value="Edit" />
-    </form>
+        <button onClick={handleDelete}>Delete</button>
+        </form>
     </>
     )
 }
