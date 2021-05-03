@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 
+import CommentForm from '../components/CommentForm'
+
 
 const SingleBrand = (props) => {
     const { id } = useParams()
@@ -52,7 +54,9 @@ const SingleBrand = (props) => {
                 <p>Loading...</p>
             }
             </div>
-            
+            <div className="comment-container">
+                <CommentForm />
+            </div>
 
         </div>
     )

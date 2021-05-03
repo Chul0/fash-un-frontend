@@ -4,11 +4,12 @@ import { Route, Redirect } from 'react-router-dom'
 import axios from 'axios'
 import { UserContext } from '../contexts/UserContext'
 
+
 const SingleImage = (props) => {
     const { id } = useParams()
     const [user, setUser] = useContext(UserContext)
     const [singleImage, setSingleImage] = useState({})
-    const [imagePopup, setImagePopup] = useState(false)  
+    const [imagePopup, setImagePopup] = useState(true)  
 
 
     const fetchSingleImage = () => {
