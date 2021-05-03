@@ -6,6 +6,7 @@ import { Redirect } from 'react-router-dom'
 const Profile = () => {
     const [user, setUser] = useContext(UserContext)
     const [shouldRedirect, setShouldRedirect] =useState(false)
+    const [imagePopup, setImagePopup] = useState(false)  
 
 
     const handleChange = (e) => {
@@ -41,13 +42,20 @@ const Profile = () => {
             // console.log(response);
             alert(`Bye ${response.data.user.name}`)
             setUser('')
+            setShouldRedirect(true)
+            setImagePopup(false)
         } catch (error) {
             console.log({error});
         }
     }
 
+    const handleShowDialog = () => {   
+        setImagePopup(!imagePopup)
+    }
+
+
     return(
-        <>
+        <div>
         { shouldRedirect && <Redirect to={'/'} /> }
         <form onSubmit={handleSubmit}>
      
@@ -61,9 +69,27 @@ const Profile = () => {
         <input name="password" type="password" value={user.password} onChange={handleChange} />
 
         <input id="submit-button" type="submit" value="Edit" />
-        <button onClick={handleDelete}>Delete</button>
         </form>
-    </>
+        <button onClick={handleShowDialog}>Delete</button>
+        
+        <>
+        {imagePopup && (
+                    
+            <dialog
+                className="dialog"
+                style={{ position: "absolute" }}
+                open
+                >
+                    <h3 className="smallImage" >
+                        You sure you want to delete your account?
+                    </h3>
+                    <button onClick={handleDelete}>Yes</button>
+                    <button onClick={handleShowDialog}>No</button>
+            </dialog>
+                )}
+        </>
+        
+    </div>
     )
 }
 
