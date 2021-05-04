@@ -188,6 +188,8 @@ ReactDOM.render(
 1. axios (if you use a third party api)
 1. sequelize 
 1. sequelize-cli
+1. dotenv and jsonwebtoken (for encrypting id)
+1. jsonwebtoken(for db hashing)
 
 - backend setup
 
