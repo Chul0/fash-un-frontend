@@ -8,34 +8,37 @@ const NavBar = () => {
     return(
             
         <nav>
-            <Link to="/">Home</Link>{' | '}
+            {user.id && 
+            <p
+                style={{textAlign:"left", padding:"10px", margin:"0",backgroundColor:"black"}}>
+                Hey {user.name}, welcome back!
+            </p>}
+            <h1 id="home-name" style={{fontSize:"xxx-large", margin:"0 auto 30px auto"}}>FASH-UN</h1>
+            <Link to="/">HOME</Link>{' | '}
 
         {user.id ?
         <>
-            <Link to="/brands">See All Brands</Link>{' | '}
-            <Link to="/myboard">My Board</Link>{' | '}
-            <Link to="/profile">Profile</Link>{' | '}
+            <Link to="/brands">DESIGNERS</Link>{' | '}
+            <Link to="/myboard">MY BOARD</Link>{' | '}
+            <Link to="/profile">PROFILE</Link>{' | '}
             <Link to="/" 
                 onClick={() => {
                     localStorage.removeItem('userId')
                     setUser('') //set user state as an empty string, so it will redirect me to home as set in App.js
                 }}
-            >Sign Out</Link>
-            <header
-                style={{textAlign:"right"}}>
-                Hello, You're signed in as {user.name}
-            </header>
+            >SIGNOUT</Link>
+            
             
         </>
 
         :
 
         <>    
-            <Link to="/signup">Sign Up</Link>{' | '}
-            <Link to="/login">Login</Link>
+            <Link to="/signup">SIGNUP</Link>{' | '}
+            <Link to="/login">LOGIN</Link>
         </>    
         }
-
+        
         </nav>
         
     )

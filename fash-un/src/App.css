@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  font-family:Arial, Helvetica, sans-serif
 }
 
 .App-header {
@@ -13,61 +14,68 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+#home-name {
+  font-family: serif;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 link{
   cursor: pointer;
+}
+
+a {
+  color: #FFF;
+}
+a:hover {
+  font-weight: bold;
+}
+
+.NavBar-container{
+  height: 160px;
+  background-color:  black;
+  color: white;
 }
 
 #submit-button, #login-button{
   cursor: pointer;
 } 
 
-.brandList-container{
-  width: 100%;
+.brandList-container, .contentImage-container, .myBoard-container{
+  width: 900px;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  margin: 100px auto;
+  margin: 30px auto;
 }
 
-.singleBrand-container{
+.singleBrand-container, .singleImage-container{
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-  width:300px;
-  height:500px;
+  width:200;
+  height:400;
   margin: auto 10px auto 10px;
 }
 
-.brandImage {
-  width: 300px;
-  height: 500px;
-  margin: auto;
+.brandImage, .contentImage, .myboardImage {
+  width: 200px;
+  height: 400px;
+  margin: 10px auto;
 }
 
 .brandName{
   position: absolute;
   margin: auto;
   color: white;
-  width: 300px;
+  width: 200px;
+  padding: 5px 0 5px 0;
   background-color: black;
+  text-align: center;
 }
 
 .brandContent-container{
   width: 100%;
   display: flex;
+  align-items: center;
   flex-direction: column;
   margin: 0;
 }
@@ -77,16 +85,13 @@ link{
   margin: 0 10px 0 10px;
 }
 
-#brandName{
-  text-align: left;
-  margin: 50px;
-}
 
 .dialog {
   box-shadow: 0 8px 6px -6px black;
+  border: 1px;
+  border-radius: 10px;
   position: static;
-  left: 20%;
-  top: 10%;
+  top: 280px;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -99,18 +104,43 @@ link{
 }
 
 .save-to-board-button{
-  margin: auto;
+  margin: 10px auto 0 auto;
+  font-weight: bold;
+  padding: 6px;
+  cursor: pointer;
 }
 
+.footer{
+  width:100%;
+  margin-top: 20px;
+  background-color: black;
+}
 .commentForm-container{
   display: flex;
   flex-direction: column;
-  width: 1000px;
+  width: 900px;
+  background-color: black;
+  color: white;
+  margin: auto;
+}
+
+.commentForm-container form{
+  background-color: black;
+  color: white;
 }
 
 #comment-input{
-  width: 900px;
+  margin-top: 10px;
+  width: 800px;
   height: 2em;
+}
+
+#comment-submit {
+  padding: 6px;
+  margin-left: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  
 }
 
 .comment-container{
@@ -120,4 +150,89 @@ link{
 
 .comment-container p{
   border-bottom: 1px solid black;
+}
+
+.myboard-container{
+  width: 400px;
+  margin: auto;
+}
+
+#deleteBtn{
+  background-color: black;
+  color: white;
+  padding: 10px;
+  margin-top: 30px;
+}
+
+.control-dots{
+  margin-top:0;
+}
+
+.dialog{
+  position:absolute;
+}
+
+.singleBoard-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width:200;
+  height:400;
+  margin: auto 10px auto 10px;
+}
+
+.singleBoard-container button {
+  padding: 6px;
+  margin-left: 10px;
+  font-weight: bold;
+  cursor: pointer; 
+}
+
+.profile-container, .SingupLoginForm-container{
+  box-shadow: 0 8px 6px -6px black;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 30px auto;
+  width: 600px;
+  height: 500px;
+}
+
+.profile-container form, .SingupLoginForm-container form{
+  margin-top: 10x;
+  width: 80%;
+  text-align: left;
+}
+
+.profile-container input, .SingupLoginForm-container input{
+  width: 100%;
+  margin-top: 10px;
+  height: 2.5em;
+}
+
+.buttons-div button{
+  padding: 6px;
+  margin: 10px;
+  font-weight: bold;
+  cursor: pointer; 
+}
+
+.dialog2{
+  box-shadow: 0 8px 6px -6px black;
+  border: 5px solid black;
+  border-radius: 10px;
+  position: absolute;
+  top: 380px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: red;
 }

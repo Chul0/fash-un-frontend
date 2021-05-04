@@ -57,7 +57,6 @@ const SingleImage = (props) => {
                     
                     <dialog
                         className="dialog"
-                        style={{ position: "absolute" }}
                         open
                         >
                         <img

@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 
+
 const BrandsList = (props) => {  
     const [allBrands, setAllBrands] = useState([])
 
@@ -17,7 +18,11 @@ const BrandsList = (props) => {
 
 
     return (
+    <>
+    <p style={{color:"darkred"}}>HOT TODAY</p>
+    <h1 style={{margin:"auto"}}>FALL 2021 MENSWEAR</h1>
       <div className="brandList-container">
+        
         {
             allBrands.length ?
             allBrands.map((brand) => {
@@ -25,7 +30,8 @@ const BrandsList = (props) => {
                             className="allBrands">
                             <Link to={`/brands/${brand.id}`}>
                                 <div className="singleBrand-container">
-                                    <h3 className="brandName">{brand.name}</h3>
+                                    <h3 className="brandName"
+                                    >{brand.name}</h3>
                                     <img className="brandImage" src={brand.image} />
                                 </div>
                             </Link>
@@ -35,6 +41,7 @@ const BrandsList = (props) => {
               <p>Loading...</p>
           }
       </div>
+    </>
     )
   }
   

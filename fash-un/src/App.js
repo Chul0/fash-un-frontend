@@ -1,4 +1,6 @@
 import './App.css';
+
+
 import { Route, Redirect } from 'react-router-dom'
 import { useState, useContext } from 'react'
 import { UserContext } from './contexts/UserContext'
@@ -21,7 +23,9 @@ function App(props) {
 
   return (
     <div className="App">
-      <NavBar />
+      <div className="NavBar-container">
+        <NavBar />
+      </div>
 
       <Route 
        path="/"

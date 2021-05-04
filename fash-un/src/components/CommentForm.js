@@ -28,7 +28,7 @@ const CommentForm= (props) => {
             <label htmlFor="new-description"></label>
             <input id="comment-input" placeholder="Your comment here" value={description} onChange={(e) => { setDescription(e.target.value)}} ></input>
 
-            <input type="submit" value="submit" />
+            <input id="comment-submit" type="submit" value="submit" />
         </form>
     )
 }

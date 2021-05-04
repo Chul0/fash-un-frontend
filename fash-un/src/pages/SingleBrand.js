@@ -1,7 +1,7 @@
 import {useParams} from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-import { Link } from 'react-router-dom'
+import { Link,Redirect } from 'react-router-dom'
 
 import CommentForm from '../components/CommentForm'
 
@@ -41,12 +41,14 @@ const SingleBrand = (props) => {
             {
                 brandContent.brandContent ?
                 brandContent.brandContent.map((content) => {
-                    return <div key={content.id}>
+                    return <div key={content.id}
+                            className="singleImage-container">
                             <Link to={`/brands/${id}/content/${content.id}`}>
                                 <img className="contentImage"
                                 src={content.image} 
                                 key={content.id}
-                                style={{ width: "300px", height: "500px", margin:" 0 10px 0 10px"}} />
+                                // onClick=   {<Redirect to={`/brands/${id}/content/${content.id}`} />} 
+                                />
                             </Link>
                             
                         
@@ -57,6 +59,7 @@ const SingleBrand = (props) => {
                 <p>Loading...</p>
             }
             </div>
+            <div className="footer">
             <div className="commentForm-container">
                 <>
                 <CommentForm setShouldReload={setShouldReload} />
@@ -69,6 +72,7 @@ const SingleBrand = (props) => {
                                    </div>
                         })
                     }
+                </div>
                 </div>
             </div>
 

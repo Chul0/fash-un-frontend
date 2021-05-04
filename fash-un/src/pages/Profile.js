@@ -55,41 +55,49 @@ const Profile = () => {
 
 
     return(
-        <div>
+        <>
+        <div className="profile-container">
+        <h1>PROFILE SETTING</h1>
         { shouldRedirect && <Redirect to={'/'} /> }
         <form onSubmit={handleSubmit}>
-     
-        <label htmlFor="new-name">Name:</label>
+        <div className="profile-input">    
+        <label htmlFor="new-name"><h2>NAME</h2></label></div>
+        <div className="profile-input">
         <input name="name" value={user.name} onChange={handleChange} />
-
-        <label htmlFor="new-email">Email:</label>
+        </div>
+        <div className="profile-input">
+        <label htmlFor="new-email"><h2>EMAIL</h2></label>
         <input name="email" value={user.email} onChange={handleChange} />
-
-        <label htmlFor="new-password">Password:</label>
+        </div>
+        <div className="profile-input">
+        <label htmlFor="new-password"><h2>PASSWORD</h2></label>
         <input name="password" type="password" value={user.password} onChange={handleChange} />
-
-        <input id="submit-button" type="submit" value="Edit" />
+        </div>
         </form>
-        <button onClick={handleShowDialog}>Delete</button>
-        
+        <div className="buttons-div">
+        <button onClick={handleSubmit}>EDIT</button>
+        <button onClick={handleShowDialog}>DELETE</button>
+        </div>
         <>
         {imagePopup && (
                     
             <dialog
-                className="dialog"
-                style={{ position: "absolute" }}
+                className="dialog2"
                 open
                 >
                     <h3 className="smallImage" >
                         You sure you want to delete your account?
                     </h3>
+                    <div className="buttons-div">
                     <button onClick={handleDelete}>Yes</button>
                     <button onClick={handleShowDialog}>No</button>
+                    </div>
             </dialog>
                 )}
         </>
         
     </div>
+    </>
     )
 }
 

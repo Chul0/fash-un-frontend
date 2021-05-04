@@ -28,24 +28,27 @@ const SingupLoginForm = (props) => {
 
 
     return (
+        <div className="SingupLoginForm-container">
+        <h1>{props.title}</h1>
         <form onSubmit={handleSubmit}>
             {/* if showName is truthy, show name input otherwise null */}
             {props.showName && 
             <>
-            <label htmlFor="new-name">Name:</label>
+            <label htmlFor="new-name"><h2>NAME</h2></label>
             <input value={name} onChange={(e)=> {setName(e.target.value) }} />
             </>
             
             }
 
-            <label htmlFor="new-email">Email:</label>
+            <label htmlFor="new-email"><h2>EMAIL</h2></label>
             <input value={email} onChange={(e)=> {setEmail(e.target.value) }} />
 
-            <label htmlFor="new-password">Password:</label>
+            <label htmlFor="new-password"><h2>PASSWORD</h2></label>
             <input type="password" value={password} onChange={(e)=> {setPassword(e.target.value) }} />
-
-            <input id="submit-button" type="submit" value={props.buttonText} />
+            <input id="submit-button" type="submit" value={props.buttonText} style={{width:"488px"}} />
+            
         </form>
+        </div>
     )
 }
 

@@ -39,20 +39,18 @@ const MyBoard = () => {
 
 
     return(
-        <>
-            <h1>MY BOARD</h1>
+        <div>
+            <h1>My Board</h1>
         
-        <div className="myBoard-container">
+        <div className="contentImage-container">
             {
                 savedImages.length ?
                 savedImages.map((image)=>{
                     // console.log(image.id);
-                    return <div key={image.id}>
-                        <div className="singleBoard-container">
+                    return <div key={image.id} >
                         <img src={image.image} 
-                             className="myboardImage"/>
+                            style={{ width: "300px", height: "500px", margin:" 0 10px 0 10px"}}/><br></br>
                         <button onClick={()=> deleteImage(image.id)} >delete</button>    
-                        </div>
                         </div>
                 })
                 :
@@ -61,7 +59,7 @@ const MyBoard = () => {
                 </p>
             }
         </div>
-        </>
+        </div>
     )
 }
 
