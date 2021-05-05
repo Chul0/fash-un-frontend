@@ -82,10 +82,11 @@ Solo Project 3 (Frontend)
 - Can I see my board? (save brand contents, list it in my board)
 
 ### Stretch goals
-- Can I find a brand through search bar?
+- Can I delete saved images from my board?
 - Can I leave comments and see them?
-- Can I edit and delete my comments?
 - Can I see my profile and edit/delete it?
+- Can I see a popup when I click an image?
+- Can I see a popup before I delete my account?
 </details>
 
 ## Work flow
