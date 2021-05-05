@@ -189,7 +189,7 @@ ReactDOM.render(
 1. sequelize 
 1. sequelize-cli
 1. dotenv and jsonwebtoken (for encrypting id)
-1. jsonwebtoken(for db hashing)
+1. bcrypt(for db hashing)
 
 - backend setup
 
