@@ -28,7 +28,7 @@ const MyBoard = () => {
         try {
             let response = await axios.delete(`${process.env.REACT_APP_BACKEND_URL}/brandcontent/${imageId}`, {
                 headers: {
-                    Authorization:localStorage.getItem('userId')
+                    Authorization: localStorage.getItem('userId')
                 }
             })
             window.location.reload()

@@ -14,7 +14,7 @@ const UserProvider = (props) => {
                 Authorization: localStorage.getItem('userId')
             }
         }).then((response) => {
-            console.log(response);
+            // console.log(response);
             setUser(response.data.user)
         })
     }

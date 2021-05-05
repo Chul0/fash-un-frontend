@@ -39,7 +39,7 @@ function App(props) {
        path="/signup"
        render={()=>{
         if(user.id){
-          return <Redirect to ="/brand" />
+          return <Redirect to ="/brands" />
         } else {
          return <Signup />
         }
@@ -50,7 +50,7 @@ function App(props) {
        path="/login"
        render={()=>{
          if(user.id){
-          return <Redirect to ="/brand" />
+          return <Redirect to ="/brands" />
          } else{
           return <Login />
          }

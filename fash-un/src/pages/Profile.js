@@ -28,14 +28,15 @@ const Profile = () => {
 
       useEffect(handleEdit,[user])
 
-    const handleSubmit = (e) =>{
+    const handleSubmit = async (e) =>{
         try {
             e.preventDefault()
-            axios.put(`${process.env.REACT_APP_BACKEND_URL}/users/profile`, editingUser,{
+            let response = await axios.put(`${process.env.REACT_APP_BACKEND_URL}/users/profile`, editingUser,{
                 headers: {
                     Authorization: localStorage.getItem('userId')
                 }
             })
+            console.log(response);
             setShouldRedirect(true)
         } catch (error) {
             console.log({error});
