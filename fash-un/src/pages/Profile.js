@@ -38,6 +38,7 @@ const Profile = () => {
             })
             console.log(response);
             setShouldRedirect(true)
+            window.location.reload()
         } catch (error) {
             console.log({error});
         }
