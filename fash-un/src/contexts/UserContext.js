@@ -5,7 +5,6 @@ const UserContext = createContext()
 
 const UserProvider = (props) => {
     const [user, setUser] = useState({})
-
     const fetchUser = () => {
         if (!localStorage.getItem('userId')) { return }
         // this is not neccessary but without it, get.request will still make a request and it will give unnecessary error message in console.log. it is basically doing.. if there is no userId, don't do make get request. return is empty, so nothing's going to happen. 
@@ -15,6 +14,7 @@ const UserProvider = (props) => {
                 Authorization: localStorage.getItem('userId')
             }
         }).then((response) => {
+            console.log(response);
             setUser(response.data.user)
         })
     }

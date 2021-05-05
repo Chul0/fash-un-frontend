@@ -17,6 +17,7 @@ const SingleImage = (props) => {
         .then((response) => {
             console.log(response.data.brandContent.image);
             setSingleImage(response.data)
+            console.log(user);
         })
     }
 
@@ -38,7 +39,7 @@ const SingleImage = (props) => {
         //Learned the hard way that even if I haven't set body in my backend, I should add body here, even as an empty body{}, is it because I am not using async?
         {
             headers:{
-                Authorization: user.id
+                Authorization: localStorage.getItem('userId')
             }
         })
         .then((response)=>{

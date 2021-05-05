@@ -18,9 +18,10 @@ const SingupLoginForm = (props) => {
             password
         })
         .then((response) => {
+            console.log(response);
             console.log(`${props.log}`);
-            setUser(response.data.user)
-            localStorage.setItem('userId', response.data.user.id)
+            // setUser(response.data.user)
+            localStorage.setItem('userId', response.data.userId)
             alert(`Hi, ${response.data.user.name}! ${props.message}`)
             
         })

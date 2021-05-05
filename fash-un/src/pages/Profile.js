@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { useContext, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { UserContext } from '../contexts/UserContext'
 import { Redirect } from 'react-router-dom'
 
@@ -7,22 +7,33 @@ const Profile = () => {
     const [user, setUser] = useContext(UserContext)
     const [shouldRedirect, setShouldRedirect] =useState(false)
     const [imagePopup, setImagePopup] = useState(false)  
+    const [editingUser, setEditingUser] =useState({
+        name:'',
+        email:'',
+        password:''
+    })
 
 
     const handleChange = (e) => {
         const { name, value } = e.target
-        setUser({
-          ...user,
+        setEditingUser({
+          ...editingUser,
           [name]: value
         })
       }
 
+      const handleEdit =() =>{
+        setEditingUser({name: user.name, email:user.email, password:''})
+      }
+
+      useEffect(handleEdit,[user])
+
     const handleSubmit = (e) =>{
         try {
             e.preventDefault()
-            axios.put(`${process.env.REACT_APP_BACKEND_URL}/users/profile`, user,{
+            axios.put(`${process.env.REACT_APP_BACKEND_URL}/users/profile`, editingUser,{
                 headers: {
-                    Authorization: user.id
+                    Authorization: localStorage.getItem('userId')
                 }
             })
             setShouldRedirect(true)
@@ -36,7 +47,7 @@ const Profile = () => {
             e.preventDefault()
             let response = await axios.delete(`${process.env.REACT_APP_BACKEND_URL}/users/`,{
                 headers:{
-                    Authorization: user.id
+                    Authorization: localStorage.getItem('userId')
                 }
             })
             // console.log(response);
@@ -63,15 +74,15 @@ const Profile = () => {
         <div className="profile-input">    
         <label htmlFor="new-name"><h2>NAME</h2></label></div>
         <div className="profile-input">
-        <input name="name" value={user.name} onChange={handleChange} />
+        <input name="name" value={editingUser.name} onChange={handleChange} />
         </div>
         <div className="profile-input">
         <label htmlFor="new-email"><h2>EMAIL</h2></label>
-        <input name="email" value={user.email} onChange={handleChange} />
+        <input name="email" value={editingUser.email} onChange={handleChange} />
         </div>
         <div className="profile-input">
         <label htmlFor="new-password"><h2>PASSWORD</h2></label>
-        <input name="password" type="password" value={user.password} onChange={handleChange} />
+        <input name="password" type="password" value={editingUser.password} onChange={handleChange} />
         </div>
         </form>
         <div className="buttons-div">

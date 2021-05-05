@@ -11,7 +11,7 @@ const MyBoard = () => {
         try {
             let response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/users/myboard`,{
                 headers:{
-                    Authorization: user.id
+                    Authorization: localStorage.getItem('userId')
                 }
             })
             // console.log(response);
@@ -22,13 +22,13 @@ const MyBoard = () => {
        
     }
 
-    useEffect(fetchSavedImage,[user.id])
+    useEffect(fetchSavedImage,[user])
 
     const deleteImage = async (imageId) => {
         try {
             let response = await axios.delete(`${process.env.REACT_APP_BACKEND_URL}/brandcontent/${imageId}`, {
                 headers: {
-                    Authorization:user.id
+                    Authorization:localStorage.getItem('userId')
                 }
             })
             window.location.reload()

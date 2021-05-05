@@ -14,7 +14,7 @@ const CommentForm= (props) => {
             description
         }, {
             headers: {
-                Authorization: user.id
+                Authorization: localStorage.getItem('userId')
             }
         })
         .then((response) => {
