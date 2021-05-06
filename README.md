@@ -130,8 +130,8 @@ Solo Project 3 (Frontend)
 </details>
 
 ## Credit
-### API
-### Photos
+
+Photos : https://www.vogue.com/
 
 
 ## Set Up Cheat sheet 
