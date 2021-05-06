@@ -196,7 +196,7 @@ ReactDOM.render(
 
 1. npm i -y
 1. npm init 
-1. npm install dependencies(written above)
+1. npm install dependencies(written above) or just npm install(if you clone down a repo that has all npm packages)
 1. .gitignore (add node_modules, config/config.json)
 1. sequelize init (To create config, migrations, models, and seeders) 
 1. adjust config
