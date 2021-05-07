@@ -24,6 +24,7 @@ const BrandsList = (props) => {
       <div className="brandList-container">
         
         {
+            // note that arrays are different: empty arrays count as false, so you can do { array ? and get the desired result. but in other languages [] counts as true, so it can be confusing for another developer reading your code when they see { array ?, they'll think "wait won't that trigger incorrectly?" so it's common to see { array.length > 0 ?
             allBrands.length ?
             allBrands.map((brand) => {
                 return <div key={brand.id}

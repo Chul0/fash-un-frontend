@@ -65,6 +65,7 @@ const SingleBrand = (props) => {
                 <CommentForm setShouldReload={setShouldReload} />
                 </>
                 <div className="comment-container">
+                    {/* when an object is nested in an array, you should map through it, if it's just a single object not contained in an array, no need to map it! */}
                     {brandContent.comments &&
                         brandContent.comments.map((comment) => {
                             return <div key={comment.id}>
